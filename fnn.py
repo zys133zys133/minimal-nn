@@ -255,6 +255,9 @@ class Layer(object):
         # End of the code to modify
         ###################################
 
+        self.d_b /= d_scores.shape[0]
+        self.d_w /= d_scores.shape[0]
+
         return d_inputs
 
 
