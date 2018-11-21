@@ -13,7 +13,7 @@ def preprocess(data):
 
 def create_one_hot_labels(labels, dim=10):
     one_hot_labels = np.zeros((labels.shape[0], dim))
-    for i in xrange(labels.shape[0]):
+    for i in range(labels.shape[0]):
         one_hot_labels[i][labels[i]] = 1
     return one_hot_labels
 
@@ -70,9 +70,9 @@ def main():
     n_epochs = 50
     batch_size = 100
     opt = fnn.GradientDescentOptimizer(0.01)
-    for i in xrange(n_epochs):
+    for i in range(n_epochs):
         sum_loss = 0.0
-        for j in xrange((n_train - 1) // batch_size + 1):
+        for j in range((n_train - 1) // batch_size + 1):
             batch_data = train_data[j*batch_size:(j+1)*batch_size]
             batch_labels = train_labels[j*batch_size:(j+1)*batch_size]
             _, loss = model.forwardprop(batch_data, batch_labels)
